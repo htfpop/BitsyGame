@@ -153,8 +153,8 @@ ITM 4 5,10
 ITM 5 3,9
 EXT 8,15 2 8,1
 EXT 7,15 2 7,1
-EXT 0,8 7 15,7
-EXT 0,9 7 15,8
+EXT 0,8 7 9,12
+EXT 0,9 7 8,12
 PAL 0
 
 ROOM 5
@@ -208,19 +208,19 @@ g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,0,0,0,0,0,0,0,0,0,0,0,0,g
-g,g,g,0,0,0,0,0,3f,39,0,0,2r,0,0,g
-g,g,g,0,0,0,0,0,0,3g,0,0,0,0,0,g
+g,g,g,0,0,0,0,0,0,0,0,0,2r,0,0,g
+g,g,g,0,0,0,0,0,0,3f,0,0,0,0,0,g
 g,g,g,0,0,0,0,0,0,0,0,0,0,0,0,g
 g,g,g,0,0,0,0,0,0,0,0,0,0,0,0,g
+g,g,g,0,0,3i,0,0,0,3i,0,3i,0,0,0,g
 g,g,g,0,0,0,0,0,0,0,0,0,0,0,0,g
-g,g,g,0,0,0,0,0,0,0,0,0,0,0,0,g
-g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
+g,g,g,g,g,g,g,g,h,i,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 NAME Olivia Bathroom
-EXT 15,7 4 0,8
-EXT 15,8 4 0,9
+EXT 9,12 4 0,8
+EXT 8,12 4 0,9
 PAL 0
 
 TIL 10
@@ -1473,25 +1473,14 @@ NAME frontChair
 
 TIL 3f
 00000000
-00000111
-00001100
-00001000
-01111110
-00000000
-00000000
-00000000
+00111000
+01000100
+11100010
+00000010
+00000010
+00000010
+00000010
 NAME Showerhead
-
-TIL 3g
-00000001
-00000001
-00000001
-00000001
-00000001
-00000001
-00000001
-00000001
-NAME ShowerHeadArm
 
 TIL 3h
 00000000
@@ -1502,6 +1491,16 @@ TIL 3h
 00000000
 00000000
 00000000
+
+TIL 3i
+00000000
+00000000
+00001100
+00111100
+00110000
+00001100
+00111100
+00110000
 
 SPR 10
 11111111
@@ -1644,26 +1643,50 @@ POS 4 7,2
 
 SPR 20
 01000000
-01000000
-01000000
-01000000
-01000000
 01111000
 00001000
 11111000
+00000000
+00000000
+00000000
+00000000
 NAME SinkRB
 POS 7 13,9
 
 SPR 21
 00000010
-00000010
-00000010
-00000010
-00000010
 00011110
 00010000
 00011111
+00000000
+00000000
+00000000
+00000000
 POS 7 12,9
+
+SPR 22
+00000000
+00000000
+00000000
+00000000
+00000000
+00011111
+00010000
+00010000
+NAME MirrorLT
+POS 7 12,5
+
+SPR 23
+00000000
+00000000
+00000000
+00000000
+00000000
+11111000
+00001000
+00001000
+NAME MirrorRT
+POS 7 13,5
 
 SPR A
 00111100
@@ -2110,27 +2133,6 @@ NAME painting1
 DLG z
 POS 4 1,6
 
-SPR 1j
-00000000
-00000010
-00001101
-00000000
-00000000
-00000000
-00000000
-00000000
-
-SPR 1k
-00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-POS 4 5,7
-
 SPR 1l
 00010000
 00101000
@@ -2140,158 +2142,144 @@ SPR 1l
 00100010
 00010100
 00001000
+NAME painting2
 DLG 11
 POS 4 11,14
 
 SPR 1m
-00000001
-00000001
-00000001
-11111111
-00000100
-00000100
-00000100
-00000100
+00000010
+00000010
+00000010
+11111110
+00001000
+00001000
+00001000
+00001000
 NAME BathtubR
+DLG 1a
 POS 7 9,8
-
-SPR 1n
-00000000
-00000000
-00000000
-11111111
-00100010
-00100100
-00010010
-00001100
-NAME BathtubTopMid
-POS 7 8,8
 
 SPR 1o
 00000000
 00000000
 00000000
-111111110
+11111111
 00000000
 00000000
 00000000
 00000000
 NAME BathtubMid
-POS 7 7,8
+DLG 19
+POS 7 8,8
 
 SPR 1p
 00000000
 00000000
 00000000
-11111111
-00100000
-00100000
-00100000
-00100000
+01111111
+00010000
+00010000
+00010000
+00010000
 NAME BathtubTopLeft
-POS 7 6,8
+DLG 15
+POS 7 7,8
 
 SPR 1q
-00000100
-00000100
-00000100
-00000100
-00001100
+00001000
 00011000
 00110000
 11100000
+00000000
+00000000
+00000000
+00000000
 NAME BathTubBottomR
+DLG 18
 POS 7 9,9
 
 SPR 1r
-00100000
-00100000
-00100000
-00100000
-00110000
+00010000
 00011000
 00001100
 00000111
-NAME BathtubLowerLeft
-POS 7 6,9
-
-SPR 1s
-00011000
-00101100
-01000010
-00100010
-00010100
-00001000
 00000000
-11111111
-NAME BathrubBotMid1
+00000000
+00000000
+00000000
+NAME BathtubLowerLeft
+DLG 16
 POS 7 7,9
 
 SPR 1t
 00000000
 00000000
 00000000
-00000000
-00000000
-00000000
-00000000
 11111111
+00000000
+00000000
+00000000
+00000000
 NAME BathtubMid2
+DLG 17
 POS 7 8,9
 
 SPR 1u
-11111110
-00000110
-00000100
-01111100
-01000000
+10000000
+11111100
+00001100
+00001000
+01111000
 01000000
 01000000
 01000000
 NAME SinkRight
+DLG 1b
 POS 7 13,8
 
 SPR 1v
-00111111
-00100000
-00100000
-00100000
-00100000
-001000001
-00100000
-00100000
-NAME MirrorL
+00010000
+00010101
+00010111
+00010001
+00010111
+00010100
+00011100
+00010000
+NAME MirrorLM
+DLG 1c
 POS 7 12,6
 
 SPR 1w
-11111100
-00000100
-00000100
-00000100
-00000100
-00000100
-00000100
-00000100
-NAME MirrorR
+01101000
+11001000
+10001000
+10001000
+11101000
+00101000
+00001000
+00001000
+NAME MirrorRM
 POS 7 13,6
 
 SPR 1x
-00100000
-00100000
-00100000
-00111111
+00010000
+00011111
+00000000
+00000000
 00000000
 00000000
 00000001
 00000000
 NAME MirrorLB
+DLG 1d
 POS 7 12,7
 
 SPR 1y
-11000100
-01000100
-00000100
-11111100
+00001000
+11111000
+00000000
+00000000
 00000000
 00000000
 10000000
@@ -2300,11 +2288,11 @@ NAME MirrorRB
 POS 7 13,7
 
 SPR 1z
-01111111
-01100000
-00100000
-00111110
-00000010
+00000000
+00111111
+00110000
+00010000
+00011110
 00000010
 00000010
 00000010
@@ -2439,6 +2427,37 @@ DLG 11
 Another fallen painting.
 NAME sprite 1l dialog
 
+DLG 12
+
+NAME MirrorRM dialog
+
+DLG 13
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr1}red{clr1}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubTopLeft dialog
+
+DLG 14
+ 
+
+DLG 15
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubTopLeft dialog 1
+
+DLG 16
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubLowerLeft dialog
+
+DLG 17
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubMid2 dialog
+
+DLG 18
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathTubBottomR dialog
+
+DLG 19
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubMid dialog
+
 DLG a
 bookshelf
 NAME bookshelf5
@@ -2565,6 +2584,22 @@ NAME sprite 1h dialog
 DLG z
 A painting lays fallen on the floor.
 NAME sprite 1i dialog
+
+DLG 1a
+You shine your light over to the bath tub.The tub is filled with what looks to be water, but it's slightly {clr2}red{clr2}. As you walk closer to the bath tub, you notice a stain on the wall.
+NAME BathtubR dialog
+
+DLG 1b
+Most of the items have been knocked over, but the mirror catches your eye.
+NAME SinkRight dialog
+
+DLG 1c
+It's completely destroyed, as you step around you can feel the broken pieces crack under your shoes. You hold up a fist to the mirror. It's almost a perfect match to me. Assailant: 40 - 50 year old male.
+NAME MirrorLM dialog
+
+DLG 1d
+It's completely destroyed, as you step around you can feel the broken pieces crack under your shoes. You hold up a fist to the mirror. It's almost a perfect match to me. Assailant: 40 - 50 year old male.
+NAME MirrorLB dialog
 
 VAR a
 42
