@@ -140,7 +140,7 @@ PAL 0
 ROOM 4
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
-g,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
+g,0,0,0,0,0,0,0,0,0,0,0,4m,0,0,g
 g,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
 g,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
 g,0,0,0,0,0,0,0,0,0,0,0,0,3e,3e,g
@@ -274,6 +274,7 @@ g,0,0,0,0,0,0,0,2a,2c,2c,2e,0,0,0,4l
 g,0,0,0,0,0,0,0,2j,2h,2g,2f,0,0,0,g
 g,0,0,0,0,0,0,0,0,0,0,0,0,0,0,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
+ITM c 10,3
 PAL 0
 
 TIL 10
@@ -2063,6 +2064,17 @@ TIL 4l
 01111110
 00000000
 
+TIL 4m
+01000000
+00100000
+01000000
+10000111
+01000101
+00000111
+00000000
+00000000
+NAME phone cord
+
 SPR 10
 11111111
 10000001
@@ -2340,7 +2352,7 @@ SPR A
 01000010
 01111110
 00100010
-POS 9 14,11
+POS 4 14,4
 
 SPR b
 00000000
@@ -2948,6 +2960,19 @@ NAME SinkLeft
 DLG 1r
 POS 7 10,8
 
+SPR 2a
+11100000
+11111000
+11111100
+11100100
+11100100
+11111100
+11111000
+11100000
+NAME phone
+DLG 1v
+POS 4 12,1
+
 ITM 0
 00000000
 00000000
@@ -3096,6 +3121,18 @@ ITM b
 00000010
 NAME gate
 DLG 1n
+
+ITM c
+00000000
+00000010
+00000111
+00001110
+00010100
+00100000
+00000000
+00000000
+NAME knife
+DLG 1u
 
 DLG 1
 You found a nice warm cup of tea
@@ -3417,6 +3454,23 @@ NAME SinkRB dialog
 DLG 1t
 Most of the items have been knocked over, but the mirror catches your eye.
 NAME sprite 21 dialog
+
+DLG 1u
+A blood covered knife lays under the pile of broken dishes.
+NAME knife dialog
+
+DLG 1v
+"""
+{shk}ring ring{shk}
+"Hello?"
+*heavy breathing*
+"Whose there?"
+*silence*
+The phone goes dead. You put the phone down, and as you do you notice the phone was unplugged.
+
+{wvy} How did the phone even ring? {wvy}
+"""
+NAME phone dialog
 
 VAR a
 42
