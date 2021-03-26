@@ -121,6 +121,7 @@ EXT 10,15 1 10,0 FX slide_d
 EXT 0,3 9 15,11 FX fade_b
 EXT 0,4 9 15,12
 EXT 15,3 5 0,3 FX slide_r
+EXT 15,4 5 0,4 FX slide_r
 PAL 0
 
 ROOM 3
@@ -190,9 +191,10 @@ g,g,g,g,g,g,g,g,g,g,g,g,g,g,0,0
 0,0,g,g,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,g,g,0,0,0,0,0,0,0,0,0,0,0,0
 NAME Hallway towards master br
-EXT 7,1 8 7,14 FX slide_u DLG 1i
-EXT 8,1 8 8,14 FX slide_u DLG 1i
+EXT 7,1 8 7,14 FX slide_u DLG 2m
+EXT 8,1 8 8,14 FX slide_u DLG 2m
 EXT 0,3 2 15,3 FX slide_l
+EXT 0,4 2 15,4 FX slide_l
 PAL 0
 
 ROOM 6
@@ -216,8 +218,8 @@ NAME livingRoom
 ITM 2 1,8
 ITM e 2,4
 ITM d 3,4
-EXT 7,0 1 7,15
-EXT 8,0 1 8,15
+EXT 7,0 1 7,15 DLG 2l
+EXT 8,0 1 8,15 DLG 2l
 PAL 0
 
 ROOM 7
@@ -238,6 +240,7 @@ g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g
 NAME Olivia Bathroom
+ITM i 11,10
 EXT 14,8 4 0,8
 EXT 14,9 4 0,9
 PAL 1
@@ -3731,6 +3734,18 @@ ITM h
 00000000
 DLG 27
 
+ITM i
+00000000
+00000000
+00001100
+00111100
+00110000
+00001100
+00111100
+00110000
+NAME oliviaBloodyFootprints
+DLG 2n
+
 DLG 1
 You found a nice warm cup of tea
 NAME tea dialog
@@ -4102,7 +4117,15 @@ DLG 1h
 NAME locked dialog
 
 DLG 1i
-{shk}*CLICK*... The door locks behind you{shk}
+"""
+{property locked true}
+{
+  - {item "3"} == 1 ?
+
+  - else ?
+    {wvy}This door is locked..{wvy}
+}
+"""
 NAME exit narration 1
 
 DLG 1j
@@ -4238,7 +4261,7 @@ DLG 2a
 """
 {shuffle
   - Leaving so soon?
-  - .You can't leave yet, you just started!
+  - You can't leave yet, you just started!
   - You can not leave yet
   - You just got here
 }
@@ -4357,6 +4380,45 @@ Currently on {wvy}antipsychotics{wvy}
 You have solved the mystery!
 """
 NAME JosephEnding
+
+DLG 2l
+"""
+{
+  - {item "2"} == 1 ?
+    {property locked false}
+  - else ?
+    {property locked true}
+    {wvy}You have not discovered all the clues!{wvy}
+}
+"""
+NAME locked exit 1
+
+DLG 2m
+"""
+{property locked true}
+{
+  - {item "3"} == 1 ?
+    {
+      - {item "c"} == 1 ?
+        {
+          - {item "i"} == 1 ?
+            {shk}The door locks behind you{shk}
+            {property locked false}
+          - else ?
+            {wvy}You must discover more clues!{wvy}
+        }
+      - else ?
+        {wvy}You must discover more clues!{wvy}
+    }
+  - else ?
+    {wvy}You must discover more clues!{wvy}
+}
+"""
+NAME lockedMasterBR
+
+DLG 2n
+{shk}Who's bloody footprints?{shk}
+NAME oliviaBloodyFootprints dialog
 
 VAR a
 42
@@ -13208,8 +13270,8 @@ audio: {
 	// Note: the entries below are examples that should be removed and replaced with your own audio files
         //test
 	'bass': { src: './tunes/bass.mp3', loop: true },
-	'craving': { src: './tunes/craving.mp3', loop: true, volume: 0.2 },
-	'ending': { src: './tunes/Is this fruit edible.mp3', loop: true, volume: 0.2 },
+	'craving': { src: './tunes/craving.mp3', loop: true, volume: 0.15 },
+	'ending': { src: './tunes/Is this fruit edible.mp3', loop: true, volume: 0.15 },
 	//'example song ID': { src: './example song filepath.mp3', loop: true },
 	//'example sfx ID': { src: './example sfx filepath.mp3', volume: 0.5 },
 },

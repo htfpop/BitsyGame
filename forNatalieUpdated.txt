@@ -1,0 +1,33 @@
+added room for endgame with different states
+fixed layout of living room 
+fixed entrances to hallway
+added sprites for hallway
+cleaned up kitchen
+linked split -> new kitchen
+cleaned up RHS with master BR 
+added more dialog for master BR, joseph's closet, Nicole's closet, both bedstands have unique dialog
+fixed SFX, lowered volume by 70% for second and third songs
+
+todo:
+lock exit doors in living room until they obtain the painting
+lock RHS until they have newspaper, knife, and visited olivias
+
+
+note:
+please play by clicking on html so music plays, lmk if it needs to be turned up/down, ty
+
+----------------------------------------------------------------------------------------------------
+
+UPDATED :D
+
+added logic to prevent user from walking out of living room until they found the picture
+added logic to prevent user from going into master BR until they have found the following:
+	- Knife (kitchen)
+	- Newspaper (Kitchen)
+	- first set of bloody footprints (olivia's bathroom)
+	
+todo:
+playtest couple more times and make sure doors are locked, grammar/spelling, 
+walls are in their place and player cant no-clip through tiles
+
+other than that just submission.
